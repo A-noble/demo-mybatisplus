@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.yuan.demomybatisplus.entity.UserInfoEntity;
 import com.yuan.demomybatisplus.entityView.UserInfoVo;
 
-import java.util.List;
-
 
 /**
  * @author MuXue
@@ -13,6 +11,5 @@ import java.util.List;
  */
 public interface UserInfoService extends IService<UserInfoEntity> {
 
-
-
+    UserInfoVo getUserInfo(String userName);
 }

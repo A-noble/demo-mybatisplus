@@ -1,6 +1,7 @@
 package com.yuan.demomybatisplus.controller;
 
-import com.yuan.demomybatisplus.entity.UserInfoEntity;
+
+import com.yuan.demomybatisplus.entityView.UserInfoVo;
 import com.yuan.demomybatisplus.entityView.result.ResultVO;
 import com.yuan.demomybatisplus.service.UserInfoService;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.List;
+
 
 /**
  * @author MuXue
@@ -23,8 +24,8 @@ public class UserInfoController {
     UserInfoService userInfoService;
 
     @GetMapping("/getUserInfo")
-    public ResultVO<List<UserInfoEntity>> getUserInfo(){
-        return ResultVO.success(userInfoService.list());
+    public ResultVO<UserInfoVo> getUserInfo(String userName){
+        return ResultVO.success(userInfoService.getUserInfo(userName));
     }
 
 }

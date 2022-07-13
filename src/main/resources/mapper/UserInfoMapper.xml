@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yuan.demomybatisplus.mapper.UserInfoMapper">
+    <resultMap id="userInfo" type="com.yuan.demomybatisplus.entityView.UserInfoVo">
+        <result column="CUID" property="cuid" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_AGE" property="userAge" />
+        <result column="SKILL" property="skill" />
+        <result column="EVALUATE" property="evaluate" />
+        <result column="FRACTION" property="fraction" />
+    </resultMap>
+    <select id="getUserInfo" resultMap="userInfo">
+        select * from user_info where USER_NAME = #{userName}
+    </select>
 </mapper>
